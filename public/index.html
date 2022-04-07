@@ -1,0 +1,208 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Rioplatense</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h3>Ctto2 Tester PLC</h3>
+        <div class="inputs_connect">
+            <input placeholder="IP host" id="ip">
+            <input placeholder="Port" type="number" id="port">
+            <input placeholder="Rack" type="number" id="rack">
+            <input placeholder="Slot" type="number" id="slot">
+            <button id="connect_button">Connect to PLC</button>
+            <div class="status">Connected <span id="status_plc" class="disconnect"></span></div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <article>
+                <h3 class="wrapper">Escritura de Variables</h3>
+                <form id="write_plc">
+                    <select name="" id="transporte_escritura">
+                        <option value="T2" selected>T2</option>
+                        <option value="T19">T19</option>
+                        <option value="T21">T21</option>
+                        <option value="T25">T25</option>
+                        <option value="T30">T30</option>
+                        <option value="T35">T35</option>
+                        <option value="T40">T40</option>
+                        <option value="T41">T41</option>
+                        <option value="T45">T45</option>
+                        <option value="T50">T50</option>
+                        <option value="T51">T51</option>
+                        <option value="T61">T61</option>
+                        <option value="T99">T99</option>
+                    </select>
+                    <input id="NuevoDato" placeholder="NuevoDato" />
+                    <input id="Transporte" placeholder="Transporte" />
+                    <input id="Comando" placeholder="Comando" />
+                    <input id="IdPallet" placeholder="IdPallet" />
+                    <input id="IdPallet2" placeholder="IdPallet2" />
+                    <input id="Informacion" placeholder="Informacion" />
+                    <input id="Destino" placeholder="Id Pallet" />
+                    <input id="Error" placeholder="Id Pallet" />
+                    <button>Write</button>
+                </form>
+            </article>
+            <article>
+                <div class="wrapper">
+                    <span>Transporte: <span id="transporte">T2</span></span>
+                </div>
+                <table id="tabla_escritura">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Valor</th>
+                            <th>TIpo de Dato</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NuevoDato</td>
+                            <td name="NuevoDato"></td>
+                            <td>Bool</td>
+                        </tr>
+                        <tr>
+                            <td>Transporte</td>
+                            <td name="Transporte"></td>
+                            <td>Word</td>
+
+                        </tr>
+                        <tr>
+                            <td>Comando</td>
+                            <td name="Comando"></td>
+                            <td>Word</td>
+
+                        </tr>
+                        <tr>
+                            <td>IdPallet</td>
+                            <td name="IdPallet"></td>
+                            <td>DInt</td>
+
+                        </tr>
+                        <tr>
+                            <td>IdPallet2</td>
+                            <td name="IdPallet2"></td>
+                            <td>DInt</td>
+
+                        </tr>
+                        <tr>
+                            <td>Informacion</td>
+                            <td name="Informacion"></td>
+                            <td>Word</td>
+
+                        </tr>
+                        <tr>
+                            <td>Destino</td>
+                            <td name="Destino"></td>
+                            <td>Word</td>
+                        </tr>
+                        <tr>
+                            <td>Error</td>
+                            <td name="Error"></td>
+                            <td>Word</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <section>
+            <article>
+                <div class="wrapper">
+                    <h3>Lectura de Variables</h3>
+                </div>
+                <select id="transporte_lectura">
+                    <option value="T2" selected>T2</option>
+                    <option value="T19">T19</option>
+                    <option value="T21">T21</option>
+                    <option value="T25">T25</option>
+                    <option value="T30">T30</option>
+                    <option value="T35">T35</option>
+                    <option value="T40">T40</option>
+                    <option value="T41">T41</option>
+                    <option value="T45">T45</option>
+                    <option value="T50">T50</option>
+                    <option value="T51">T51</option>
+                    <option value="T61">T61</option>
+                    <option value="T99">T99</option>
+                </select>
+                <button id="read-button">Read</button>
+            </article>
+            <article>
+                <div class="wrapper">
+                    <span>Transporte: <span id="transporte_read">T2</span></span>
+                </div>
+                <table id="tabla_lectura">
+                    <thead>
+                        <tr>
+                            <th>Variable</th>
+                            <th>Valor</th>
+                            <th>TIpo de Dato</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NuevoDato</td>
+                            <td name="NuevoDato"></td>
+                            <td>Bool</td>
+                        </tr>
+                        <tr>
+                            <td>Transporte</td>
+                            <td name="Transporte"></td>
+                            <td>Word</td>
+
+                        </tr>
+                        <tr>
+                            <td>Comando</td>
+                            <td name="Comando"></td>
+                            <td>Word</td>
+
+                        </tr>
+                        <tr>
+                            <td>IdPallet</td>
+                            <td name="IdPallet"></td>
+                            <td>DInt</td>
+
+                        </tr>
+                        <tr>
+                            <td>IdPallet2</td>
+                            <td name="IdPallet2"></td>
+                            <td>DInt</td>
+
+                        </tr>
+                        <tr>
+                            <td>Informacion</td>
+                            <td name="Informacion"></td>
+                            <td>Word</td>
+
+                        </tr>
+                        <tr>
+                            <td>Destino</td>
+                            <td name="Destino"></td>
+                            <td>Word</td>
+                        </tr>
+                        <tr>
+                            <td>Error</td>
+                            <td name="Error"></td>
+                            <td>Word</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./ui/app.js" type="module"></script>
+</body>
+
+</html>
